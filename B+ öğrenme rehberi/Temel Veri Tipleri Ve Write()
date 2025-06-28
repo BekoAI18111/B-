@@ -1,0 +1,93 @@
+
+---
+
+## 📦 Temel Veri Tipleri ve EditValue Kütüphanesi (B+)
+
+### 🎯 Değişken Tanımı
+Değişkenler şu şekilde tanımlanır:
+
+```
+a = 5        # tamsayı
+b = 3.14     # ondalıklı sayı
+c = "merhaba"  # karakter dizisi
+```
+
+### 🧷 Tür Sınırları
+
+| Tip            | Örnek       | Min       | Max            |
+|----------------|-------------|-----------|----------------|
+| Tamsayı        | `a = 5`     | -1000     | +1000          |
+| Ondalıklı sayı | `a = 3.14`  | -1 milyar | +1 milyar      |
+| Karakter dizisi| `a = "b+"`  | 0 karakter| 1000 karakter   |
+
+### 🔡 Değişken Adı Kuralları
+
+- `_` ile başlayamaz/bitemez, ama içinde olabilir: `ad_soyad` geçerli
+- Harf, sayı ve `_` içerebilir
+- Sayıyla başlayamaz: `2puan` geçersiz, `puan2` geçerli
+- Her dildeki harfler kullanılabilir (örnek: `نام`, `имя`, `adı`)
+
+### ✍️ Yazı Yazma: `write()`
+
+```
+write("merhaba")
+write("merhaba"-up)   # çıktı: MERHABA
+write("MERHABA"-dw)   # çıktı: merhaba
+```
+
+- `-up` → tüm harfleri büyütür
+- `-dw` → tüm harfleri küçültür
+- `"..."` içinde değişken çağırmak için: `[_degisken_]`
+  - Örn: `write("Yaşınız [_yas_]")`
+
+---
+
+## 🧰 use EditValue
+
+Kütüphane tanımı:
+```
+use EditValue
+```
+
+### remove()
+Değişkeni tamamen siler:
+
+```
+remove(ad)
+```
+
+### copy()
+Bir değişkeni yenisine kopyalar:
+
+```
+a = "beko"
+a.copy(yeni_a)
+write(yeni_a)  # çıktı: beko
+```
+
+### name.it()
+Bir değişkene yeni isim verir:
+
+```
+isim = "beko"
+name.it(isim > "ad")
+write(ad)   # çıktı: beko
+```
+
+> `isim` artık tanımsızdır.
+
+### noc()
+Bir değişkenin karakter uzunluğunu verir:
+
+```
+a = "merhaba"
+write(noc(a))   # çıktı: 7
+```
+
+> `noc` = number of character
+
+---
+
+Peki sizlerin önerileri var mı?
+bana iletin beraber B+'ı geliştirelim!
+
